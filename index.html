@@ -61,6 +61,32 @@
       font-weight: bold;
       margin-top: 5px;
     }
+
+    .lang-select {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .lang-select select {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: white;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        transition: border 0.2s;
+    }
+
+    .lang-select select:hover {
+        border-color: #888;
+    }
+
   </style>
 </head>
 <body>
@@ -73,15 +99,16 @@
 
   <div class="grid" id="list"></div>
 
-  <div style="margin-bottom: 20px;">
-    <label for="lang">🌐 Language:</label>
-    <select id="lang" style="padding: 5px; margin-left: 10px;">
+  <div class="lang-select">
+    <label for="lang">🌐</label>
+    <select id="lang">
       <option value="ru-RU">Русский</option>
       <option value="en-US">English</option>
       <option value="pt-PT">Português</option>
       <option value="uk-UA">Українська</option>
     </select>
   </div>
+  
   
 
   <script>
