@@ -108,25 +108,38 @@
 
       list.sort((a, b) => b.rating - a.rating);
 
-      for (const item of list) {
-        const res = await fetch(`https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=ru-RU`);
-        const data = await res.json();
-        const first = data.results?.[0];
+    for (const item of list) {
+        const cacheKey = `${currentType}_${item.title}`;
+        let cached = localStorage.getItem(cacheKey);
+        let first;
+
+        if (cached) {
+            first = JSON.parse(cached);
+        } else {
+            const res = await fetch(`https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=ru-RU`);
+            const data = await res.json();
+            first = data.results?.[0];
+            if (first) {
+            localStorage.setItem(cacheKey, JSON.stringify(first));
+            }
+        }
+
         if (!first) continue;
 
         const poster = first.poster_path
-          ? `https://image.tmdb.org/t/p/w300${first.poster_path}`
-          : 'https://via.placeholder.com/300x450?text=Нет+постера';
+            ? `https://image.tmdb.org/t/p/w300${first.poster_path}`
+            : 'https://via.placeholder.com/300x450?text=Нет+постера';
 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <img src="${poster}" alt="${item.title}" />
-          <div><strong>${item.title}</strong></div>
-          <div class="rating">⭐ ${item.rating}</div>
+            <img src="${poster}" alt="${item.title}" />
+            <div><strong>${item.title}</strong></div>
+            <div class="rating">⭐ ${item.rating}</div>
         `;
         container.appendChild(card);
-      }
+    }
+
     }
 
     loadRatings(); // should run here
