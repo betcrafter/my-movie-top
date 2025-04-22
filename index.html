@@ -73,9 +73,23 @@
 
   <div class="grid" id="list"></div>
 
+  <div style="margin-bottom: 20px;">
+    <label for="lang">🌐 Language:</label>
+    <select id="lang" style="padding: 5px; margin-left: 10px;">
+      <option value="ru-RU">Русский</option>
+      <option value="en-US">English</option>
+      <option value="pt-PT">Português</option>
+      <option value="uk-UA">Українська</option>
+    </select>
+  </div>
+  
+
   <script>
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    let currentLanguage = savedLanguage || 'ru-RU';
     const API_KEY = '6f9e225e6b29d098b4a4fa7826fdba57';
     let currentType = 'tv';
+
 
     document.getElementById('tvBtn').addEventListener('click', () => {
       currentType = 'tv';
@@ -116,7 +130,7 @@
         if (cached) {
             first = JSON.parse(cached);
         } else {
-            const res = await fetch(`https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=ru-RU`);
+            const res = await fetch(`https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=${currentLanguage}`);
             const data = await res.json();
             first = data.results?.[0];
             if (first) {
@@ -147,7 +161,26 @@
 
     }
 
-    loadRatings(); // should run here
+
+    document.getElementById('lang').addEventListener('change', (e) => {
+        const newLang = e.target.value;
+
+        // cleaning the cache
+        localStorage.clear();
+
+        // Saving selected lang
+        localStorage.setItem('selectedLanguage', newLang);
+        currentLanguage = newLang;
+
+        loadRatings(); // reloading
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('lang').value = currentLanguage;
+        loadRatings(); // first exection 
+    });
+
+
+ // should run here
   </script>
 </body>
 </html>
