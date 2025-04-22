@@ -130,13 +130,18 @@
             ? `https://image.tmdb.org/t/p/w300${first.poster_path}`
             : 'https://via.placeholder.com/300x450?text=Нет+постера';
 
+        const tmdbLink = `https://www.themoviedb.org/${currentType}/${first.id}`;
+
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
+        <a href="${tmdbLink}" target="_blank" style="text-decoration: none; color: inherit;">
             <img src="${poster}" alt="${item.title}" />
             <div><strong>${item.title}</strong></div>
             <div class="rating">⭐ ${item.rating}</div>
+        </a>
         `;
+
         container.appendChild(card);
     }
 
