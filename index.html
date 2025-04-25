@@ -157,7 +157,11 @@
         if (cached) {
             first = JSON.parse(cached);
         } else {
-            const res = await fetch(`https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=${currentLanguage}`);
+            let queryURL = `https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=${currentLanguage}`;
+            if (item.year) {
+                queryURL += `&first_air_date_year=${item.year}`;
+            }
+            const res = await fetch(queryURL);
             const data = await res.json();
             first = data.results?.[0];
             if (first) {
