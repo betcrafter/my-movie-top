@@ -55,8 +55,10 @@
     { "title": "When They See Us", "rating": 8.3 },
     { "title": "Houdini", "rating": 6.3, "year": 2014 },
     { "title": "Silicon Valley", "rating": 7.5, "year": 2014 },
+    { "title": "Cosmos", "rating": 9, "year": 2014 },
 
     { "title": "Unbelievable", "rating": 0, "year": 2019 },
     { "title": "The Young Pope", "rating": 0, "year": 2016 },
+    { "title": "The Wire", "rating": 0, "year": 2002 },
     { "title": "The Idol", "rating": 0, "year": 2023 }
 ]
