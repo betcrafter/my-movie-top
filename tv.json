@@ -26,7 +26,7 @@
     { "title": "Lie to Me", "rating": 7.7 },
     { "title": "Day Break", "rating": 7.3, "year": 2006 },
     { "title": "Bates Motel", "rating": 6.9 },
-    { "title": "Leverage", "rating": 6.9 },
+    { "title": "Leverage", "rating": 6.7 },
     { "title": "Elementary", "rating": 6.1 },
     { "title": "Supernatural", "rating": 6.6 },
     { "title": "Heroes", "rating": 8.1 },
@@ -53,6 +53,8 @@
     { "title": "The Night Of", "rating": 7.8, "year": 2016 },
     { "title": "Black Bird", "rating": 8.1, "year": 2022 },
     { "title": "When They See Us", "rating": 8.3 },
+    { "title": "Houdini", "rating": 6.3, "year": 2014 },
+    { "title": "Silicon Valley", "rating": 7.5, "year": 2014 },
 
     { "title": "Unbelievable", "rating": 0, "year": 2019 },
     { "title": "The Young Pope", "rating": 0, "year": 2016 },

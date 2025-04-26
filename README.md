@@ -1,4 +1,4 @@
-# 🎬 Alex Approves – My Personal Movie & TV Show Ratings Site
+# 🎬 Approved – My Personal Movie & TV Show Ratings Site
 
 Welcome to my personal project! This is a simple, fast-loading static website that displays my favorite movies and TV shows, sorted by rating.
 

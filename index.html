@@ -149,7 +149,7 @@
 
       list.sort((a, b) => b.rating - a.rating);
 
-    for (const item of list) {
+      for (const item of list) {
         const cacheKey = `${currentType}_${item.title}`;
         let cached = localStorage.getItem(cacheKey);
         let first;
@@ -165,9 +165,9 @@
             const data = await res.json();
             first = data.results?.[0];
             if (first) {
-            localStorage.setItem(cacheKey, JSON.stringify(first));
+              localStorage.setItem(cacheKey, JSON.stringify(first));
             }
-        }
+          }
 
         if (!first) continue;
 
@@ -181,33 +181,33 @@
         card.className = 'card';
         card.innerHTML = `
         <a href="${tmdbLink}" target="_blank" style="text-decoration: none; color: inherit;">
-            <img src="${poster}" alt="${item.title}" />
-            <div><strong>${item.title}</strong></div>
-            <div class="rating">⭐ ${item.rating}</div>
+          <img src="${poster}" alt="${item.title}" />
+          <div><strong>${item.title}</strong></div>
+          <div class="rating">⭐ ${item.rating}</div>
         </a>
         `;
 
         container.appendChild(card);
-    }
+      }
 
     }
 
 
     document.getElementById('lang').addEventListener('change', (e) => {
-        const newLang = e.target.value;
+      const newLang = e.target.value;
 
-        // cleaning the cache
-        localStorage.clear();
+      // cleaning the cache
+      localStorage.clear();
 
-        // Saving selected lang
-        localStorage.setItem('selectedLanguage', newLang);
-        currentLanguage = newLang;
+      // Saving selected lang
+      localStorage.setItem('selectedLanguage', newLang);
+      currentLanguage = newLang;
 
-        loadRatings(); // reloading
+      loadRatings(); // reloading
     });
     document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('lang').value = currentLanguage;
-        loadRatings(); // first exection 
+      document.getElementById('lang').value = currentLanguage;
+      loadRatings(); // first exection 
     });
 
 
