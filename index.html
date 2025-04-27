@@ -160,8 +160,13 @@
         } else {
             let queryURL = `https://api.themoviedb.org/3/search/${currentType}?api_key=${API_KEY}&query=${encodeURIComponent(item.title)}&language=${currentLanguage}`;
             if (item.year) {
+              if (currentType === 'tv') {
                 queryURL += `&first_air_date_year=${item.year}`;
+              } else if (currentType === 'movie') {
+                queryURL += `&primary_release_year=${item.year}`;
+              }
             }
+
             const res = await fetch(queryURL);
             const data = await res.json();
             first = data.results?.[0];

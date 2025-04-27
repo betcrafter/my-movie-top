@@ -9,11 +9,11 @@
     { "title": "The Shawshank Redemption", "rating": 9.3 },
     { "title": "The Matrix", "rating": 8.7 },
     { "title": "The Lord of the Rings: The Return of the King", "rating": 9.0 },
-    { "title": "Gladiator", "rating": 8.5 },
+    { "title": "Gladiator", "rating": 8.5, "year": 2000 },
     { "title": "The Silence of the Lambs", "rating": 8.6 },
     { "title": "Saving Private Ryan", "rating": 8.6 },
     { "title": "The Departed", "rating": 8.5 },
-    { "title": "Whiplash", "rating": 8.5 },
+    { "title": "True romance", "rating": 8.1 },
     { "title": "Se7en", "rating": 8.6 },
     { "title": "The Usual Suspects", "rating": 8.5 },
     { "title": "Goodfellas", "rating": 8.7 },
@@ -24,7 +24,7 @@
     { "title": "Titanic", "rating": 8.4 },
     { "title": "Avatar", "rating": 8.8 },
     { "title": "In time", "rating": 8.6, "year": 2011 },
-    { "title": "Gone in 60 Seconds", "rating": 10, "year": 2000 },
+    { "title": "Gone in Sixty Seconds", "rating": 10, "year": 2000 },
     { "title": "The Avengers", "rating": 8.0 }
   ]
   
