@@ -73,10 +73,10 @@
     { "title": "Black Sails", "rating": 6.1, "year": 2014 },
     { "title": "Marco Polo", "rating": 6.3, "year": 2014 },
 
-    { "title": "Unbelievable", "rating": 0, "year": 2019 },
-    { "title": "The Expanse", "rating": 0, "year": 2015 },
-    { "title": "The Young Pope", "rating": 0, "year": 2016 },
-    { "title": "The Wire", "rating": 0, "year": 2002 },
-    { "title": "The Handmaid's Tale", "rating": 0, "year": 2002 },
-    { "title": "The Idol", "rating": 0, "year": 2023 }
+    { "title": "Unbelievable", "rating": "...", "year": 2019 },
+    { "title": "The Expanse", "rating": "...", "year": 2015 },
+    { "title": "The Young Pope", "rating": "...", "year": 2016 },
+    { "title": "The Wire", "rating": "...", "year": 2002 },
+    { "title": "The Handmaid's Tale", "rating": "...", "year": 2002 },
+    { "title": "The Idol", "rating": "...", "year": 2023 }
 ]
