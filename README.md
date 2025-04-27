@@ -1,6 +1,6 @@
 # 🎬 Approved – My Personal Movie & TV Show Ratings Site
 
-Welcome to my personal project! This is a simple, fast-loading static website that displays my favorite movies and TV shows, sorted by rating.
+Welcome here! This is a simple, fast-loading static website that displays my favorite movies and TV shows, sorted by rating.
 
 Built with:
 - ✅ Plain HTML + CSS + JS
