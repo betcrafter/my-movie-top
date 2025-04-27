@@ -23,6 +23,8 @@
     { "title": "Jurassic Park", "rating": 6.2 },
     { "title": "Titanic", "rating": 8.4 },
     { "title": "Avatar", "rating": 8.8 },
+    { "title": "In time", "rating": 8.6, "year": 2011 },
+    { "title": "Gone in 60 Seconds", "rating": 10, "year": 2000 },
     { "title": "The Avengers", "rating": 8.0 }
   ]
   
