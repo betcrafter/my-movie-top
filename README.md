@@ -1,5 +1,5 @@
 # 🎬 Approved – My Personal Movie & TV Show Ratings Site
-
+https://tinyurl.com/alex-movie-top ==> https://betcrafter.github.io/my-movie-top/
 Welcome here! This is a simple, fast-loading static website that displays my favorite movies and TV shows, sorted by rating.
 
 Built with:
