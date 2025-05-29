@@ -19,7 +19,7 @@
     { "title": "Fargo", "rating": 8.1 },
     { "title": "Westworld", "rating": 6.2 },
     { "title": "You", "rating": 7.3 },
-    { "title": "House", "rating": 8.4 },
+    { "title": "House", "rating": 8.5 },
     { "title": "Spartacus", "rating": 8 },
     { "title": "The Killing", "rating": 7.4 },
     { "title": "Dexter", "rating": 8.9 },
@@ -56,7 +56,7 @@
     { "title": "Houdini", "rating": 6.3, "year": 2014 },
     { "title": "Silicon Valley", "rating": 7.5, "year": 2014 },
     { "title": "Cosmos", "rating": 9, "year": 2014 },
-    { "title": "The Last of Us", "rating": 8.2, "year": 2023 },
+    { "title": "The Last of Us", "rating": 9, "year": 2023 },
     { "title": "How to Get Away with Murder", "rating": 8.8, "year": 2014 },
     { "title": "Silo", "rating": 7.2, "year": 2023 },
     { "title": "From", "rating": 7.8, "year": 2022 },
@@ -75,7 +75,7 @@
     { "title": "The Last Man on Earth", "rating": 6.7, "year": 2015 },
     { "title": "Trust", "rating": 7.1, "year": 2018 },
     { "title": "Squid Game", "rating": 8.3, "year": 2021 },
-    
+    { "title": "Desperate Housewives", "rating": 8.7, "year": 2004 },
     
     { "title": "Unbelievable", "rating": "...", "year": 2019 },
     { "title": "The Expanse", "rating": "...", "year": 2015 },
