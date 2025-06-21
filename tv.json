@@ -76,6 +76,8 @@
     { "title": "Trust", "rating": 7.1, "year": 2018 },
     { "title": "Squid Game", "rating": 8.3, "year": 2021 },
     { "title": "Desperate Housewives", "rating": 8.7, "year": 2004 },
+    { "title": "Snowpiercer", "rating": 8.3, "year": 2020 },
+    
     
     { "title": "Unbelievable", "rating": "...", "year": 2019 },
     { "title": "The Expanse", "rating": "...", "year": 2015 },
