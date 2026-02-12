@@ -13,7 +13,7 @@
   { "title": "The Silence of the Lambs", "rating": 8.6, "year": 1991 },
   { "title": "Saving Private Ryan", "rating": 8.6, "year": 1998 },
   { "title": "Se7en", "rating": 8.6, "year": 1995 },
-  { "title": "In Time", "rating": 8.6, "year": 2011 },
+  
   { "title": "Gladiator", "rating": 8.5, "year": 2000 },
   { "title": "The Departed", "rating": 8.5, "year": 2006 },
   { "title": "The Usual Suspects", "rating": 8.5, "year": 1995 },
@@ -26,7 +26,7 @@
   
   
   { "title": "Fight Club", "rating": 7.9, "year": 1999 },
-  
+  { "title": "In Time", "rating": 7.6, "year": 2011 },
   { "title": "The Avengers", "rating": 7.5, "year": 2012 },
   { "title": "Back to the Future", "rating": 7.2, "year": 1985 },
   { "title": "Jurassic Park", "rating": 6.2, "year": 1993 }
