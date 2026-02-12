@@ -29,7 +29,7 @@
     { "title": "Rome", "rating": 8.1, "year": 2005 },
     { "title": "Spartacus", "rating": 8.0 },
     { "title": "11.22.63", "rating": 8.0 },
-    { "title": "Modern Family", "rating": 8.0 },
+
     { "title": "13 Reasons Why", "rating": 7.9 },
     { "title": "Your Honor", "rating": 7.9 },
     { "title": "From", "rating": 7.8, "year": 2022 },
@@ -56,6 +56,7 @@
     { "title": "Trust", "rating": 7.1, "year": 2018 },
     { "title": "The Office", "rating": 7 },
     { "title": "The Event", "rating": 7, "year": 2010 },
+    { "title": "Modern Family", "rating": 7 },
     { "title": "The Walking Dead", "rating": 6.9 },
     { "title": "Bates Motel", "rating": 6.9 },
     { "title": "Persons Unknown", "rating": 6.9 },
