@@ -122,6 +122,20 @@
         border-color: #888;
     }
 
+    .kinobd-test {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 12px;
+      text-align: center;
+    }
+
+    .kinobd-test h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
   </style>
 </head>
 <body>
@@ -139,6 +153,12 @@
   </div>
 
   <div class="grid" id="list"></div>
+
+  <section class="kinobd-test" aria-label="KinoBD test player">
+    <h2>Тест плеера (KinoBD)</h2>
+    <div id="kinobd" data-kinopoisk="401522"></div>
+    <script src="https://kinobd.net/js/player_.js"></script>
+  </section>
 
   <div class="lang-select">
     <label for="lang">🌐</label>
