@@ -12,6 +12,7 @@
     { "title": "Better Call Saul", "rating": 8.8 },
     { "title": "House", "rating": 8.8 },
     { "title": "How to Get Away with Murder", "rating": 8.8, "year": 2014 },
+    { "title": "Why Women Kill", "rating": 8.3, "year": 2019 },
     { "title": "Peaky Blinders", "rating": 8.7 },
     { "title": "Money Heist", "rating": 8.6, "year": 2017 },
     { "title": "Narcos", "rating": 8.5 },
@@ -29,7 +30,6 @@
     { "title": "Rome", "rating": 8.1, "year": 2005 },
     { "title": "Spartacus", "rating": 8.0 },
     { "title": "11.22.63", "rating": 8.0 },
-
     { "title": "13 Reasons Why", "rating": 7.9 },
     { "title": "Your Honor", "rating": 7.9 },
     { "title": "From", "rating": 7.8, "year": 2022 },
