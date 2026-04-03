@@ -252,6 +252,78 @@
         border-color: #888;
     }
 
+    .lang-select label[for="lang"] {
+      cursor: default;
+      user-select: none;
+    }
+
+    .easter-egg-panel {
+      display: none;
+      max-width: 960px;
+      margin: 2rem auto 2rem;
+      padding: 1.25rem;
+      border: 1px dashed #aaa;
+      border-radius: 12px;
+      background: #fafafa;
+      text-align: left;
+    }
+
+    .easter-egg-panel.is-visible {
+      display: block;
+    }
+
+    .easter-egg-hint {
+      margin: 0 0 0.75rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .easter-egg-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .easter-egg-row label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    #easterKpInput {
+      min-width: 160px;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    #easterKpCheck {
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #222;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    #easterKpCheck:hover {
+      background: #444;
+    }
+
+    #easterKinobdMount {
+      min-height: 80px;
+    }
+
+    .easter-error {
+      margin: 0;
+      padding: 0.75rem;
+      color: #b00020;
+      font-size: 14px;
+    }
+
   </style>
 </head>
 <body>
@@ -273,13 +345,13 @@
   <div class="player-modal" id="playerModal" role="dialog" aria-modal="true" aria-labelledby="playerModalTitle">
     <div class="player-modal-dialog">
       <button type="button" class="player-modal-close" id="playerModalClose" aria-label="Close">×</button>
-      <h2 class="player-modal-title" id="playerModalTitle">Плеер</h2>
+      <h2 class="player-modal-title" id="playerModalTitle">Player</h2>
       <div id="kinobdMount"></div>
     </div>
   </div>
 
   <div class="lang-select">
-    <label for="lang">🌐</label>
+    <label for="lang" id="langGlobeLabel">🌐</label>
     <select id="lang">
       <option value="en-US">English</option>
       <option value="ru-RU">Русский</option>
@@ -287,8 +359,16 @@
       <option value="uk-UA">Українська</option>
     </select>
   </div>
-  
-  
+
+  <section id="easterEggPanel" class="easter-egg-panel" aria-hidden="true">
+    <p class="easter-egg-hint">Manual KinoBD player (Kinopoisk ID)</p>
+    <div class="easter-egg-row">
+      <label for="easterKpInput">Kinopoisk ID</label>
+      <input type="text" id="easterKpInput" inputmode="numeric" autocomplete="off" placeholder="e.g. 104122" />
+      <button type="button" id="easterKpCheck">Check</button>
+    </div>
+    <div id="easterKinobdMount"></div>
+  </section>
 
   <script>
     const savedLanguage = localStorage.getItem('selectedLanguage');
@@ -411,11 +491,10 @@
     function clearKinobdDom() {
       document.getElementById('kinobd-wrapper')?.remove();
       document.getElementById('kinobd-buttons')?.remove();
-      const legacy = document.getElementById('kinobd');
-      if (legacy && legacy.parentNode === kinobdMount) legacy.remove();
+      document.getElementById('kinobd')?.remove();
     }
 
-    async function finalizeKinobdMount() {
+    async function initKinobdWidget(errorContainer) {
       const hadKbp = typeof window.kbp === 'function';
       try {
         await ensureKinobdScript();
@@ -423,22 +502,27 @@
           window.kbp();
         }
       } catch (e) {
-        kinobdMount.innerHTML = '<p style="padding:1rem;color:#c00;">Не удалось загрузить виджет KinoBD.</p>';
+        errorContainer.innerHTML = '<p style="padding:1rem;color:#c00;">Failed to load KinoBD widget.</p>';
       }
+    }
+
+    async function finalizeKinobdMount() {
+      await initKinobdWidget(kinobdMount);
       playerModal.classList.add('is-open');
     }
 
     /**
-     * Онлайн-плеер: только Kinopoisk ID (data-kinopoisk), не TMDb.
+     * Online player: Kinopoisk ID only (data-kinopoisk), not TMDb.
      */
     async function openPlayerModal(title, kinopoiskId) {
-      playerModalTitle.textContent = title || 'Плеер';
+      playerModalTitle.textContent = title || 'Player';
       clearKinobdDom();
       kinobdMount.replaceChildren();
+      easterKinobdMount.replaceChildren();
 
       const kp = Number(kinopoiskId);
       if (!Number.isInteger(kp) || kp <= 0) {
-        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">Нет ID Кинопоиска для этого тайтла.</p>';
+        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">No Kinopoisk ID for this title.</p>';
         playerModal.classList.add('is-open');
         return;
       }
@@ -451,16 +535,17 @@
     }
 
     /**
-     * Блок торрентов KinoBD: data-player="torrent" + data-title (как в доке KinoBD).
+     * KinoBD torrent block: data-player="torrent" + data-title (per KinoBD docs).
      */
     async function openTorrentModal(displayTitle, listTitle) {
       const title = (displayTitle && String(displayTitle).trim()) || (listTitle && String(listTitle).trim()) || '';
-      playerModalTitle.textContent = title ? `Торренты — ${title}` : 'Торренты';
+      playerModalTitle.textContent = title ? `Torrents — ${title}` : 'Torrents';
       clearKinobdDom();
       kinobdMount.replaceChildren();
+      easterKinobdMount.replaceChildren();
 
       if (!title) {
-        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">Нет названия для поиска торрентов.</p>';
+        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">No title to look up torrents.</p>';
         playerModal.classList.add('is-open');
         return;
       }
@@ -487,6 +572,56 @@
       if (e.key === 'Escape' && playerModal.classList.contains('is-open')) closePlayerModal();
     });
 
+    const easterEggPanel = document.getElementById('easterEggPanel');
+    const easterKinobdMount = document.getElementById('easterKinobdMount');
+    const easterKpInput = document.getElementById('easterKpInput');
+    const easterKpCheck = document.getElementById('easterKpCheck');
+
+    let globeClickCount = 0;
+    let globeClickTimer = null;
+    const GLOBE_CLICK_RESET_MS = 2500;
+
+    document.getElementById('langGlobeLabel').addEventListener('click', () => {
+      clearTimeout(globeClickTimer);
+      globeClickCount += 1;
+      if (globeClickCount >= 5) {
+        globeClickCount = 0;
+        easterEggPanel.classList.add('is-visible');
+        easterEggPanel.setAttribute('aria-hidden', 'false');
+        easterKpInput.focus();
+        return;
+      }
+      globeClickTimer = setTimeout(() => {
+        globeClickCount = 0;
+      }, GLOBE_CLICK_RESET_MS);
+    });
+
+    easterKpCheck.addEventListener('click', async () => {
+      const raw = easterKpInput.value.trim();
+      const kp = Number(raw);
+      closePlayerModal();
+      clearKinobdDom();
+      easterKinobdMount.replaceChildren();
+
+      if (!Number.isInteger(kp) || kp <= 0) {
+        const p = document.createElement('p');
+        p.className = 'easter-error';
+        p.textContent = 'Enter a valid positive Kinopoisk ID.';
+        easterKinobdMount.appendChild(p);
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.id = 'kinobd';
+      div.setAttribute('data-kinopoisk', String(kp));
+      easterKinobdMount.appendChild(div);
+      await initKinobdWidget(easterKinobdMount);
+    });
+
+    easterKpInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') easterKpCheck.click();
+    });
+
     async function renderPage() {
       const start = (currentPage - 1) * PAGE_SIZE;
       const pageItems = fullList.slice(start, start + PAGE_SIZE);
@@ -502,7 +637,7 @@
 
         const poster = first.poster_path
           ? `https://image.tmdb.org/t/p/w300${first.poster_path}`
-          : 'https://via.placeholder.com/300x450?text=Нет+постера';
+          : 'https://via.placeholder.com/300x450?text=No+poster';
         const tmdbNumericId = first.id;
         const tmdbLink = `https://www.themoviedb.org/${currentType}/${tmdbNumericId}`;
         const displayName = first.name || first.title || item.title;
@@ -515,8 +650,8 @@
           <img src="${poster}" alt="${item.title}" loading="lazy" />
           <div class="card-title"><strong>${displayName}</strong></div>
           <div class="card-footer">
-            <button type="button" class="torrent-btn" title="Торренты" aria-label="Открыть торренты (KinoBD)">${torrentIcon}</button>
-            <button type="button" class="info-btn" title="Открыть на TMDb" aria-label="Открыть на The Movie Database">i</button>
+            <button type="button" class="torrent-btn" title="Torrents" aria-label="Open torrents (KinoBD)">${torrentIcon}</button>
+            <button type="button" class="info-btn" title="Open on TMDb" aria-label="Open on The Movie Database">i</button>
             <div class="rating">⭐ ${item.rating}</div>
           </div>
         `;
