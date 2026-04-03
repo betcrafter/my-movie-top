@@ -44,5 +44,5 @@ sources/
 *~
 
 # Optional local exports (uncomment if you never commit timestamped JSON)
- tv_20*.json
- movies_20*.json
+tv_20*.json
+movies_20*.json
