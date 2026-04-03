@@ -16,3 +16,32 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+# Local secrets and enrichment backups
+.env
+tv.json.bak
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors / IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Optional local exports (uncomment if you never commit timestamped JSON)
+# tv_20*.json
+# movies_20*.json
