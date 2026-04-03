@@ -1,5 +1,7 @@
 [
     { "title": "", "rating": 0 },
-    { "title": "", "rating": 0, "year" : 1000 }
+    { "title": "", "rating": 0, "year" : 1000 },
+    { "title": "", "rating": 0, "year" : 1000, "tmdb_id" : 0, "kinopoisk_id" : 0, "imdb_id" : "" }
   ]
+  
   

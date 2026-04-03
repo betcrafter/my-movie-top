@@ -1,33 +1,226 @@
 [
-  { "title": "Gone in Sixty Seconds", "rating": 10, "year": 2000 },
-  { "title": "Interstellar", "rating": 9.3, "year": 2014 },
-  { "title": "The Shawshank Redemption", "rating": 9.3, "year": 1994 },
-  { "title": "The Godfather", "rating": 9.1, "year": 1972 },
-  { "title": "The Lord of the Rings: The Return of the King", "rating": 9.0, "year": 2003 },
-  { "title": "Pulp Fiction", "rating": 8.9, "year": 1994 },
-  { "title": "Inception", "rating": 8.8, "year": 2010 },
-  { "title": "Avatar", "rating": 8.8, "year": 2009 },
-  { "title": "Titanic", "rating": 8.8, "year": 1997 },
-  { "title": "The Matrix", "rating": 8.7, "year": 1999 },
-  { "title": "Goodfellas", "rating": 8.7, "year": 1990 },
-  { "title": "The Silence of the Lambs", "rating": 8.6, "year": 1991 },
-  { "title": "Saving Private Ryan", "rating": 8.6, "year": 1998 },
-  { "title": "Se7en", "rating": 8.6, "year": 1995 },
-  
-  { "title": "Gladiator", "rating": 8.5, "year": 2000 },
-  { "title": "The Departed", "rating": 8.5, "year": 2006 },
-  { "title": "The Usual Suspects", "rating": 8.5, "year": 1995 },
-  { "title": "The Prestige", "rating": 8.5, "year": 2006 },
-  { "title": "The Lion King", "rating": 8.5, "year": 1994 },
-  { "title": "The Dark Knight", "rating": 8.3, "year": 2008 },
-  { "title": "Forrest Gump", "rating": 8.2, "year": 1994 },
-  { "title": "Housemaid", "rating": 8.1, "year": 2025 },
-  { "title": "True Romance", "rating": 8.1, "year": 1993 },
-  
-  
-  { "title": "Fight Club", "rating": 7.9, "year": 1999 },
-  { "title": "In Time", "rating": 7.6, "year": 2011 },
-  { "title": "The Avengers", "rating": 7.5, "year": 2012 },
-  { "title": "Back to the Future", "rating": 7.2, "year": 1985 },
-  { "title": "Jurassic Park", "rating": 6.2, "year": 1993 }
+  {
+    "title": "Gone in Sixty Seconds",
+    "rating": 10,
+    "year": 2000,
+    "tmdb_id": 0,
+    "kinopoisk_id": 2011,
+    "imdb_id": "tt0187078"
+  },
+  {
+    "title": "Interstellar",
+    "rating": 9.3,
+    "year": 2014,
+    "tmdb_id": 157336,
+    "kinopoisk_id": 258687,
+    "imdb_id": "tt0816692"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "rating": 9.3,
+    "year": 1994,
+    "tmdb_id": 278,
+    "kinopoisk_id": 326,
+    "imdb_id": "tt0111161"
+  },
+  {
+    "title": "The Godfather",
+    "rating": 9.1,
+    "year": 1972,
+    "tmdb_id": 238,
+    "kinopoisk_id": 325,
+    "imdb_id": "tt0068646"
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "rating": 9.0,
+    "year": 2003,
+    "tmdb_id": 122,
+    "kinopoisk_id": 3498,
+    "imdb_id": "tt0167260"
+  },
+  {
+    "title": "Pulp Fiction",
+    "rating": 8.9,
+    "year": 1994,
+    "tmdb_id": 680,
+    "kinopoisk_id": 342,
+    "imdb_id": "tt0110912"
+  },
+  {
+    "title": "Inception",
+    "rating": 8.8,
+    "year": 2010,
+    "tmdb_id": 27205,
+    "kinopoisk_id": 447301,
+    "imdb_id": "tt1375666"
+  },
+  {
+    "title": "Avatar",
+    "rating": 8.8,
+    "year": 2009,
+    "tmdb_id": 19995,
+    "kinopoisk_id": 251733,
+    "imdb_id": "tt0499549"
+  },
+  {
+    "title": "Titanic",
+    "rating": 8.8,
+    "year": 1997,
+    "tmdb_id": 597,
+    "kinopoisk_id": 2213,
+    "imdb_id": "tt0120338"
+  },
+  {
+    "title": "The Matrix",
+    "rating": 8.7,
+    "year": 1999,
+    "tmdb_id": 603,
+    "kinopoisk_id": 301,
+    "imdb_id": "tt0133093"
+  },
+  {
+    "title": "Goodfellas",
+    "rating": 8.7,
+    "year": 1990,
+    "tmdb_id": 769,
+    "kinopoisk_id": 350,
+    "imdb_id": "tt0099685"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "rating": 8.6,
+    "year": 1991,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1363350,
+    "imdb_id": "tt5289054"
+  },
+  {
+    "title": "Saving Private Ryan",
+    "rating": 8.6,
+    "year": 1998,
+    "tmdb_id": 857,
+    "kinopoisk_id": 371,
+    "imdb_id": "tt0120815"
+  },
+  {
+    "title": "Se7en",
+    "rating": 8.6,
+    "year": 1995,
+    "tmdb_id": 807,
+    "kinopoisk_id": 377,
+    "imdb_id": "tt0114369"
+  },
+  {
+    "title": "Gladiator",
+    "rating": 8.5,
+    "year": 2000,
+    "tmdb_id": 98,
+    "kinopoisk_id": 474,
+    "imdb_id": "tt0172495"
+  },
+  {
+    "title": "The Departed",
+    "rating": 8.5,
+    "year": 2006,
+    "tmdb_id": 1422,
+    "kinopoisk_id": 81314,
+    "imdb_id": "tt0407887"
+  },
+  {
+    "title": "The Usual Suspects",
+    "rating": 8.5,
+    "year": 1995,
+    "tmdb_id": 629,
+    "kinopoisk_id": 340,
+    "imdb_id": "tt0114814"
+  },
+  {
+    "title": "The Prestige",
+    "rating": 8.5,
+    "year": 2006,
+    "tmdb_id": 1124,
+    "kinopoisk_id": 195334,
+    "imdb_id": "tt0482571"
+  },
+  {
+    "title": "The Lion King",
+    "rating": 8.5,
+    "year": 1997,
+    "tmdb_id": 0,
+    "kinopoisk_id": 4638160,
+    "imdb_id": "tt14571278"
+  },
+  {
+    "title": "The Dark Knight",
+    "rating": 8.3,
+    "year": 2008,
+    "tmdb_id": 155,
+    "kinopoisk_id": 111543,
+    "imdb_id": "tt0468569"
+  },
+  {
+    "title": "Forrest Gump",
+    "rating": 8.2,
+    "year": 1994,
+    "tmdb_id": 13,
+    "kinopoisk_id": 448,
+    "imdb_id": "tt0109830"
+  },
+  {
+    "title": "Housemaid",
+    "rating": 8.1,
+    "year": 2025,
+    "tmdb_id": 1368166,
+    "kinopoisk_id": 6750360,
+    "imdb_id": "tt27543632"
+  },
+  {
+    "title": "True Romance",
+    "rating": 8.1,
+    "year": 1993,
+    "tmdb_id": 319,
+    "kinopoisk_id": 4149,
+    "imdb_id": "tt0108399"
+  },
+  {
+    "title": "Fight Club",
+    "rating": 7.9,
+    "year": 1999,
+    "tmdb_id": 550,
+    "kinopoisk_id": 361,
+    "imdb_id": "tt0137523"
+  },
+  {
+    "title": "In Time",
+    "rating": 7.6,
+    "year": 2011,
+    "tmdb_id": 49530,
+    "kinopoisk_id": 517988,
+    "imdb_id": "tt1637688"
+  },
+  {
+    "title": "The Avengers",
+    "rating": 7.5,
+    "year": 2012,
+    "tmdb_id": 24428,
+    "kinopoisk_id": 263531,
+    "imdb_id": "tt0848228"
+  },
+  {
+    "title": "Back to the Future",
+    "rating": 7.2,
+    "year": 1985,
+    "tmdb_id": 105,
+    "kinopoisk_id": 476,
+    "imdb_id": "tt0088763"
+  },
+  {
+    "title": "Jurassic Park",
+    "rating": 6.2,
+    "year": 1993,
+    "tmdb_id": 329,
+    "kinopoisk_id": 7121,
+    "imdb_id": "tt0107290"
+  }
 ]

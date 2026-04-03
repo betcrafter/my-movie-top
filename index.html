@@ -84,17 +84,147 @@
       width: 180px;
       text-align: center;
       padding: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 14px #bbb;
     }
 
     .card img {
       width: 100%;
       border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .card-title {
+      margin-top: 6px;
+      pointer-events: none;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      justify-content: flex-start;
+    }
+
+    .info-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-style: italic;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 0;
+      line-height: 1;
+      box-sizing: border-box;
+    }
+
+    .info-btn:hover {
+      background: #333;
+    }
+
+    .torrent-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1b5e20;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .torrent-btn:hover {
+      background: #2e7d32;
+    }
+
+    .torrent-btn svg {
+      display: block;
     }
 
     .rating {
       font-size: 18px;
       font-weight: bold;
-      margin-top: 5px;
+      flex: 1;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .player-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.55);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .player-modal.is-open {
+      display: flex;
+    }
+
+    .player-modal-dialog {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 960px;
+      width: 100%;
+      max-height: 92vh;
+      overflow: auto;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      padding: 16px 16px 24px;
+      text-align: center;
+    }
+
+    .player-modal-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: #eee;
+      border-radius: 8px;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .player-modal-close:hover {
+      background: #ddd;
+    }
+
+    .player-modal-title {
+      margin: 0 40px 12px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    #kinobdMount {
+      min-height: 120px;
     }
 
     .lang-select {
@@ -122,20 +252,6 @@
         border-color: #888;
     }
 
-    .kinobd-test {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 12px;
-      text-align: center;
-    }
-
-    .kinobd-test h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
   </style>
 </head>
 <body>
@@ -154,11 +270,13 @@
 
   <div class="grid" id="list"></div>
 
-  <section class="kinobd-test" aria-label="KinoBD test player">
-    <h2>Тест плеера (KinoBD)</h2>
-    <div id="kinobd" data-kinopoisk="401522"></div>
-    <script src="https://kinobd.net/js/player_.js"></script>
-  </section>
+  <div class="player-modal" id="playerModal" role="dialog" aria-modal="true" aria-labelledby="playerModalTitle">
+    <div class="player-modal-dialog">
+      <button type="button" class="player-modal-close" id="playerModalClose" aria-label="Close">×</button>
+      <h2 class="player-modal-title" id="playerModalTitle">Плеер</h2>
+      <div id="kinobdMount"></div>
+    </div>
+  </div>
 
   <div class="lang-select">
     <label for="lang">🌐</label>
@@ -221,6 +339,23 @@
     }
 
     async function fetchOneItem(item) {
+      const tmdbId = Number(item.tmdb_id);
+      if (Number.isInteger(tmdbId) && tmdbId > 0) {
+        const cacheKey = `${currentType}_id_${tmdbId}_${currentLanguage}`;
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) return JSON.parse(cached);
+
+        const detailURL = `https://api.themoviedb.org/3/${currentType}/${tmdbId}?api_key=${API_KEY}&language=${currentLanguage}`;
+        const res = await fetch(detailURL);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.id) {
+            localStorage.setItem(cacheKey, JSON.stringify(data));
+            return data;
+          }
+        }
+      }
+
       const cacheKey = `${currentType}_${item.title}`;
       const cached = localStorage.getItem(cacheKey);
       if (cached) return JSON.parse(cached);
@@ -254,6 +389,104 @@
       await renderPage();
     }
 
+    const playerModal = document.getElementById('playerModal');
+    const kinobdMount = document.getElementById('kinobdMount');
+    const playerModalTitle = document.getElementById('playerModalTitle');
+    let kinobdScriptPromise = null;
+
+    function ensureKinobdScript() {
+      if (typeof window.kbp === 'function') return Promise.resolve();
+      if (kinobdScriptPromise) return kinobdScriptPromise;
+      kinobdScriptPromise = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = 'https://kinobd.net/js/player_.js';
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error('KinoBD script failed to load'));
+        document.head.appendChild(s);
+      });
+      return kinobdScriptPromise;
+    }
+
+    function clearKinobdDom() {
+      document.getElementById('kinobd-wrapper')?.remove();
+      document.getElementById('kinobd-buttons')?.remove();
+      const legacy = document.getElementById('kinobd');
+      if (legacy && legacy.parentNode === kinobdMount) legacy.remove();
+    }
+
+    async function finalizeKinobdMount() {
+      const hadKbp = typeof window.kbp === 'function';
+      try {
+        await ensureKinobdScript();
+        if (hadKbp && typeof window.kbp === 'function') {
+          window.kbp();
+        }
+      } catch (e) {
+        kinobdMount.innerHTML = '<p style="padding:1rem;color:#c00;">Не удалось загрузить виджет KinoBD.</p>';
+      }
+      playerModal.classList.add('is-open');
+    }
+
+    /**
+     * Онлайн-плеер: только Kinopoisk ID (data-kinopoisk), не TMDb.
+     */
+    async function openPlayerModal(title, kinopoiskId) {
+      playerModalTitle.textContent = title || 'Плеер';
+      clearKinobdDom();
+      kinobdMount.replaceChildren();
+
+      const kp = Number(kinopoiskId);
+      if (!Number.isInteger(kp) || kp <= 0) {
+        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">Нет ID Кинопоиска для этого тайтла.</p>';
+        playerModal.classList.add('is-open');
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.id = 'kinobd';
+      div.setAttribute('data-kinopoisk', String(kp));
+      kinobdMount.appendChild(div);
+      await finalizeKinobdMount();
+    }
+
+    /**
+     * Блок торрентов KinoBD: data-player="torrent" + data-title (как в доке KinoBD).
+     */
+    async function openTorrentModal(displayTitle, listTitle) {
+      const title = (displayTitle && String(displayTitle).trim()) || (listTitle && String(listTitle).trim()) || '';
+      playerModalTitle.textContent = title ? `Торренты — ${title}` : 'Торренты';
+      clearKinobdDom();
+      kinobdMount.replaceChildren();
+
+      if (!title) {
+        kinobdMount.innerHTML = '<p style="padding:1rem;color:#555;">Нет названия для поиска торрентов.</p>';
+        playerModal.classList.add('is-open');
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.id = 'kinobd';
+      div.setAttribute('data-player', 'torrent');
+      div.setAttribute('data-title', title);
+      kinobdMount.appendChild(div);
+      await finalizeKinobdMount();
+    }
+
+    function closePlayerModal() {
+      playerModal.classList.remove('is-open');
+      clearKinobdDom();
+      kinobdMount.replaceChildren();
+    }
+
+    document.getElementById('playerModalClose').addEventListener('click', closePlayerModal);
+    playerModal.addEventListener('click', (e) => {
+      if (e.target === playerModal) closePlayerModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && playerModal.classList.contains('is-open')) closePlayerModal();
+    });
+
     async function renderPage() {
       const start = (currentPage - 1) * PAGE_SIZE;
       const pageItems = fullList.slice(start, start + PAGE_SIZE);
@@ -270,17 +503,39 @@
         const poster = first.poster_path
           ? `https://image.tmdb.org/t/p/w300${first.poster_path}`
           : 'https://via.placeholder.com/300x450?text=Нет+постера';
-        const tmdbLink = `https://www.themoviedb.org/${currentType}/${first.id}`;
+        const tmdbNumericId = first.id;
+        const tmdbLink = `https://www.themoviedb.org/${currentType}/${tmdbNumericId}`;
+        const displayName = first.name || first.title || item.title;
+        const kinopoiskIdForPlayer = item.kinopoisk_id;
 
         const card = document.createElement('div');
         card.className = 'card';
+        const torrentIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16l4-4h-3V4h-2v8H8l4 4zm9-13h-6v2h6v14H3V5h6V3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>`;
         card.innerHTML = `
-        <a href="${tmdbLink}" target="_blank" style="text-decoration: none; color: inherit;">
           <img src="${poster}" alt="${item.title}" loading="lazy" />
-          <div><strong>${first.name || first.title}</strong></div>
-          <div class="rating">⭐ ${item.rating}</div>
-        </a>
+          <div class="card-title"><strong>${displayName}</strong></div>
+          <div class="card-footer">
+            <button type="button" class="torrent-btn" title="Торренты" aria-label="Открыть торренты (KinoBD)">${torrentIcon}</button>
+            <button type="button" class="info-btn" title="Открыть на TMDb" aria-label="Открыть на The Movie Database">i</button>
+            <div class="rating">⭐ ${item.rating}</div>
+          </div>
         `;
+
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.info-btn') || e.target.closest('.torrent-btn')) return;
+          openPlayerModal(displayName, kinopoiskIdForPlayer);
+        });
+
+        card.querySelector('.torrent-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openTorrentModal(displayName, item.title);
+        });
+
+        card.querySelector('.info-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.open(tmdbLink, '_blank', 'noopener,noreferrer');
+        });
+
         container.appendChild(card);
       });
 

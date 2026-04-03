@@ -1,95 +1,730 @@
 [
-    { "title": "Lost", "rating": 10 },
-    { "title": "Breaking Bad", "rating": 9.9 },
-    { "title": "Desperate Housewives", "rating": 9.6, "year": 2004 },
-    { "title": "Prison Break", "rating": 9.5 },
-    { "title": "Chernobyl", "rating": 9.4 },
-    { "title": "Billions", "rating": 9.2, "year": 2016 },
-    { "title": "Ozark", "rating": 9.1 },
-    { "title": "Cosmos", "rating": 9.0, "year": 2014 },
-    { "title": "The Last of Us", "rating": 9.0, "year": 2023 },
-    { "title": "Dexter", "rating": 8.9 },
-    { "title": "Better Call Saul", "rating": 8.8 },
-    { "title": "House", "rating": 8.8 },
-    { "title": "How to Get Away with Murder", "rating": 8.8, "year": 2014 },
-    { "title": "Why Women Kill", "rating": 8.3, "year": 2019 },
-    { "title": "Peaky Blinders", "rating": 8.7 },
-    { "title": "Money Heist", "rating": 8.6, "year": 2017 },
-    { "title": "Narcos", "rating": 8.5 },
-    { "title": "Sherlock", "rating": 8.4 },
-    { "title": "And Then There Were None", "rating": 8.4, "year": 2015 },
-    { "title": "When They See Us", "rating": 8.3 },
-    { "title": "Squid Game", "rating": 8.3, "year": 2021 },
-    { "title": "Snowpiercer", "rating": 8.3, "year": 2020 },
-    { "title": "Dope Thief", "rating": 8.2, "year": 2025 },
-    { "title": "Black Mirror", "rating": 8.2 },
-    { "title": "Fargo", "rating": 8.1 },
-    { "title": "Heroes", "rating": 8.1 },
-    { "title": "Tulsa King", "rating": 8.1, "year": 2022 },
-    { "title": "Black Bird", "rating": 8.1, "year": 2022 },
-    { "title": "Rome", "rating": 8.1, "year": 2005 },
-    { "title": "Spartacus", "rating": 8.0 },
-    { "title": "11.22.63", "rating": 8.0 },
-    { "title": "13 Reasons Why", "rating": 7.9 },
-    { "title": "Your Honor", "rating": 7.9 },
-    { "title": "From", "rating": 7.8, "year": 2022 },
-    { "title": "The Night Of", "rating": 7.8, "year": 2016 },
-    { "title": "Lie to Me", "rating": 7.7 },
-    { "title": "Game of Thrones", "rating": 7.6 },
-    { "title": "Jericho", "rating": 7.6, "year": 2006 },
-    { "title": "Harper's Island", "rating": 7.6 },
-    { "title": "Hijack", "rating": 7.6 },
-    { "title": "Baby Reindeer", "rating": 7.5 },
-    { "title": "Silicon Valley", "rating": 7.5, "year": 2014 },
-    { "title": "The Killing", "rating": 7.4 },
-    { "title": "Under the Dome", "rating": 7.4 },
-    { "title": "The Strain", "rating": 7.4 },
-    { "title": "Mindhunter", "rating": 7.4, "year": 2017 },
-    { "title": "You", "rating": 7.3 },
-    { "title": "Day Break", "rating": 7.3, "year": 2006 },
-    { "title": "Vikings", "rating": 7.3 },
-    { "title": "V", "rating": 7.2, "year": 2009 },
-    { "title": "Silo", "rating": 7.2, "year": 2023 },
-    { "title": "The Queen's Gambit", "rating": 7.1 },
-    { "title": "FlashForward", "rating": 7.1 },
-    { "title": "The 4400", "rating": 7.1 },
-    { "title": "Trust", "rating": 7.1, "year": 2018 },
-    { "title": "The Office", "rating": 7 },
-    { "title": "The Event", "rating": 7, "year": 2010 },
-    { "title": "Modern Family", "rating": 7 },
-    { "title": "The Walking Dead", "rating": 6.9 },
-    { "title": "Bates Motel", "rating": 6.9 },
-    { "title": "Persons Unknown", "rating": 6.9 },
-    { "title": "Shogun", "rating": 6.9, "year": 2024 },
-    { "title": "Outer Banks", "rating": 6.8, "year": 2020 },
-    { "title": "Leverage", "rating": 6.7 },
-    { "title": "Colony", "rating": 6.7, "year": 2016 },
-    { "title": "The Last Man on Earth", "rating": 6.7, "year": 2015 },
-    { "title": "Supernatural", "rating": 6.6 },
-    { "title": "Agents of S.H.I.E.L.D.", "rating": 6.5, "year": 2013 },
-    { "title": "The 100", "rating": 6.4 },
-    { "title": "Houdini", "rating": 6.3, "year": 2014 },
-    { "title": "Marco Polo", "rating": 6.3, "year": 2014 },
-    { "title": "Friends", "rating": 6.2 },
-    { "title": "The Witcher", "rating": 6.2 },
-    { "title": "Westworld", "rating": 6.2 },
-    { "title": "Fringe", "rating": 6.2, "year": 2008 },
-    { "title": "Elementary", "rating": 6.1 },
-    { "title": "Black Sails", "rating": 6.1, "year": 2014 },
-    { "title": "The Big Bang Theory", "rating": 6 },
-    { "title": "The Forgotten", "rating": 6 },
-    { "title": "Extant", "rating": 5.9 },
-
-    { "title": "Unbelievable", "rating": "...", "year": 2019 },
-    { "title": "The Expanse", "rating": "...", "year": 2015 },
-    { "title": "The Young Pope", "rating": "...", "year": 2016 },
-    { "title": "The Wire", "rating": "...", "year": 2002 },
-    { "title": "The Handmaid's Tale", "rating": "...", "year": 2002 },
-    { "title": "The Idol", "rating": "...", "year": 2023 },
-    { "title": "Dark matter", "rating": "...", "year": 2024 },
-    { "title": "Silo", "rating": "...", "year": 2023 },
-    { "title": "When They See Us", "rating": "...", "year": 2019 },
-    { "title": "A Knight of the Seven Kingdoms", "rating": "...", "year": 2026 },
-    { "title": "Fallout", "rating": "...", "year": 2024 }
-    
+  {
+    "title": "Lost",
+    "rating": 10,
+    "year": 2004,
+    "tmdb_id": 4607,
+    "kinopoisk_id": 104122,
+    "imdb_id": "tt0411008"
+  },
+  {
+    "title": "Breaking Bad",
+    "rating": 9.9,
+    "year": 2008,
+    "tmdb_id": 0,
+    "kinopoisk_id": 404900,
+    "imdb_id": "tt0903747"
+  },
+  {
+    "title": "Desperate Housewives",
+    "rating": 9.6,
+    "year": 2004,
+    "tmdb_id": 693,
+    "kinopoisk_id": 160958,
+    "imdb_id": "tt0410975"
+  },
+  {
+    "title": "Prison Break",
+    "rating": 9.5,
+    "year": 2005,
+    "tmdb_id": 2288,
+    "kinopoisk_id": 258048,
+    "imdb_id": "tt0455275"
+  },
+  {
+    "title": "Chernobyl",
+    "rating": 9.4,
+    "year": 2019,
+    "tmdb_id": 87108,
+    "kinopoisk_id": 1227803,
+    "imdb_id": "tt7366338"
+  },
+  {
+    "title": "Billions",
+    "rating": 9.2,
+    "year": 2016,
+    "tmdb_id": 62852,
+    "kinopoisk_id": 863009,
+    "imdb_id": "tt4270492"
+  },
+  {
+    "title": "Ozark",
+    "rating": 9.1,
+    "year": 2017,
+    "tmdb_id": 69740,
+    "kinopoisk_id": 1045553,
+    "imdb_id": "tt5071412"
+  },
+  {
+    "title": "Cosmos",
+    "rating": 9.0,
+    "year": 2014,
+    "tmdb_id": 0,
+    "kinopoisk_id": 762381,
+    "imdb_id": ""
+  },
+  {
+    "title": "The Last of Us",
+    "rating": 9.0,
+    "year": 2023,
+    "tmdb_id": 100088,
+    "kinopoisk_id": 839458,
+    "imdb_id": "tt3581920"
+  },
+  {
+    "title": "Dexter",
+    "rating": 8.9,
+    "year": 2006,
+    "tmdb_id": 1405,
+    "kinopoisk_id": 277537,
+    "imdb_id": "tt0773262"
+  },
+  {
+    "title": "Better Call Saul",
+    "rating": 8.8,
+    "year": 2015,
+    "tmdb_id": 60059,
+    "kinopoisk_id": 796660,
+    "imdb_id": "tt3032476"
+  },
+  {
+    "title": "House",
+    "rating": 8.8,
+    "year": 2022,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1316601,
+    "imdb_id": ""
+  },
+  {
+    "title": "How to Get Away with Murder",
+    "rating": 8.8,
+    "year": 2014,
+    "tmdb_id": 61056,
+    "kinopoisk_id": 804876,
+    "imdb_id": "tt3205802"
+  },
+  {
+    "title": "Why Women Kill",
+    "rating": 8.3,
+    "year": 2019,
+    "tmdb_id": 87428,
+    "kinopoisk_id": 1197956,
+    "imdb_id": "tt9054904"
+  },
+  {
+    "title": "Peaky Blinders",
+    "rating": 8.7,
+    "year": 2013,
+    "tmdb_id": 60574,
+    "kinopoisk_id": 716587,
+    "imdb_id": "tt2442560"
+  },
+  {
+    "title": "Money Heist",
+    "rating": 8.6,
+    "year": 2010,
+    "tmdb_id": 0,
+    "kinopoisk_id": 518193,
+    "imdb_id": "tt1560581"
+  },
+  {
+    "title": "Narcos",
+    "rating": 8.5,
+    "year": 2015,
+    "tmdb_id": 63351,
+    "kinopoisk_id": 821565,
+    "imdb_id": "tt2707408"
+  },
+  {
+    "title": "Sherlock",
+    "rating": 8.4,
+    "year": 2010,
+    "tmdb_id": 19885,
+    "kinopoisk_id": 502838,
+    "imdb_id": "tt1475582"
+  },
+  {
+    "title": "And Then There Were None",
+    "rating": 8.4,
+    "year": 2015,
+    "tmdb_id": 64684,
+    "kinopoisk_id": 921477,
+    "imdb_id": "tt3581932"
+  },
+  {
+    "title": "When They See Us",
+    "rating": 8.3,
+    "year": 2019,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1174230,
+    "imdb_id": ""
+  },
+  {
+    "title": "Squid Game",
+    "rating": 8.3,
+    "year": 2023,
+    "tmdb_id": 204082,
+    "kinopoisk_id": 5001503,
+    "imdb_id": "tt28104766"
+  },
+  {
+    "title": "Snowpiercer",
+    "rating": 8.3,
+    "year": 2020,
+    "tmdb_id": 79680,
+    "kinopoisk_id": 1040428,
+    "imdb_id": "tt6156584"
+  },
+  {
+    "title": "Dope Thief",
+    "rating": 8.2,
+    "year": 2025,
+    "tmdb_id": 209876,
+    "kinopoisk_id": 5138508,
+    "imdb_id": "tt21638826"
+  },
+  {
+    "title": "Black Mirror",
+    "rating": 8.2,
+    "year": 2011,
+    "tmdb_id": 42009,
+    "kinopoisk_id": 655800,
+    "imdb_id": "tt2085059"
+  },
+  {
+    "title": "Fargo",
+    "rating": 8.1,
+    "year": 2014,
+    "tmdb_id": 60622,
+    "kinopoisk_id": 767379,
+    "imdb_id": "tt2802850"
+  },
+  {
+    "title": "Heroes",
+    "rating": 8.1,
+    "year": 2006,
+    "tmdb_id": 1639,
+    "kinopoisk_id": 271748,
+    "imdb_id": "tt0813715"
+  },
+  {
+    "title": "Tulsa King",
+    "rating": 8.1,
+    "year": 2022,
+    "tmdb_id": 153312,
+    "kinopoisk_id": 4760854,
+    "imdb_id": "tt16358384"
+  },
+  {
+    "title": "Black Bird",
+    "rating": 8.1,
+    "year": 2022,
+    "tmdb_id": 155537,
+    "kinopoisk_id": 4397580,
+    "imdb_id": "tt4301160"
+  },
+  {
+    "title": "Rome",
+    "rating": 8.1,
+    "year": 2005,
+    "tmdb_id": 0,
+    "kinopoisk_id": 257386,
+    "imdb_id": "tt0384766"
+  },
+  {
+    "title": "Spartacus",
+    "rating": 8.0,
+    "year": 2010,
+    "tmdb_id": 46296,
+    "kinopoisk_id": 469619,
+    "imdb_id": "tt1442449"
+  },
+  {
+    "title": "11.22.63",
+    "rating": 8.0,
+    "year": 2016,
+    "tmdb_id": 64464,
+    "kinopoisk_id": 891337,
+    "imdb_id": "tt2879552"
+  },
+  {
+    "title": "13 Reasons Why",
+    "rating": 7.9,
+    "year": 2017,
+    "tmdb_id": 66788,
+    "kinopoisk_id": 582358,
+    "imdb_id": "tt1837492"
+  },
+  {
+    "title": "Your Honor",
+    "rating": 7.9,
+    "year": 2020,
+    "tmdb_id": 86430,
+    "kinopoisk_id": 1253157,
+    "imdb_id": "tt7440726"
+  },
+  {
+    "title": "From",
+    "rating": 7.8,
+    "year": 2022,
+    "tmdb_id": 124364,
+    "kinopoisk_id": 4476885,
+    "imdb_id": "tt9813792"
+  },
+  {
+    "title": "The Night Of",
+    "rating": 7.8,
+    "year": 2016,
+    "tmdb_id": 0,
+    "kinopoisk_id": 733419,
+    "imdb_id": "tt2401256"
+  },
+  {
+    "title": "Lie to Me",
+    "rating": 7.7,
+    "year": 2009,
+    "tmdb_id": 8358,
+    "kinopoisk_id": 428930,
+    "imdb_id": "tt1235099"
+  },
+  {
+    "title": "Game of Thrones",
+    "rating": 7.6,
+    "year": 2011,
+    "tmdb_id": 1399,
+    "kinopoisk_id": 464963,
+    "imdb_id": "tt0944947"
+  },
+  {
+    "title": "Jericho",
+    "rating": 7.6,
+    "year": 2006,
+    "tmdb_id": 365,
+    "kinopoisk_id": 260888,
+    "imdb_id": "tt0805663"
+  },
+  {
+    "title": "Harper's Island",
+    "rating": 7.6,
+    "year": 2009,
+    "tmdb_id": 7354,
+    "kinopoisk_id": 455381,
+    "imdb_id": "tt1232320"
+  },
+  {
+    "title": "Hijack",
+    "rating": 7.6,
+    "year": 2023,
+    "tmdb_id": 198102,
+    "kinopoisk_id": 4968949,
+    "imdb_id": "tt19854762"
+  },
+  {
+    "title": "Baby Reindeer",
+    "rating": 7.5,
+    "year": 2024,
+    "tmdb_id": 241259,
+    "kinopoisk_id": 5165951,
+    "imdb_id": "tt13649112"
+  },
+  {
+    "title": "Silicon Valley",
+    "rating": 7.5,
+    "year": 2014,
+    "tmdb_id": 60573,
+    "kinopoisk_id": 723959,
+    "imdb_id": "tt2575988"
+  },
+  {
+    "title": "The Killing",
+    "rating": 7.4,
+    "year": 2011,
+    "tmdb_id": 34415,
+    "kinopoisk_id": 518075,
+    "imdb_id": "tt1637727"
+  },
+  {
+    "title": "Under the Dome",
+    "rating": 7.4,
+    "year": 2013,
+    "tmdb_id": 46331,
+    "kinopoisk_id": 574704,
+    "imdb_id": "tt1553656"
+  },
+  {
+    "title": "The Strain",
+    "rating": 7.4,
+    "year": 2014,
+    "tmdb_id": 47640,
+    "kinopoisk_id": 737843,
+    "imdb_id": "tt2654620"
+  },
+  {
+    "title": "Mindhunter",
+    "rating": 7.4,
+    "year": 2017,
+    "tmdb_id": 0,
+    "kinopoisk_id": 958500,
+    "imdb_id": ""
+  },
+  {
+    "title": "You",
+    "rating": 7.3,
+    "year": 2018,
+    "tmdb_id": 78191,
+    "kinopoisk_id": 1115630,
+    "imdb_id": "tt7335184"
+  },
+  {
+    "title": "Day Break",
+    "rating": 7.3,
+    "year": 2006,
+    "tmdb_id": 4618,
+    "kinopoisk_id": 271964,
+    "imdb_id": "tt0801425"
+  },
+  {
+    "title": "Vikings",
+    "rating": 7.3,
+    "year": 2013,
+    "tmdb_id": 44217,
+    "kinopoisk_id": 682255,
+    "imdb_id": "tt2306299"
+  },
+  {
+    "title": "V",
+    "rating": 7.2,
+    "year": 2009,
+    "tmdb_id": 21494,
+    "kinopoisk_id": 453372,
+    "imdb_id": "tt1307824"
+  },
+  {
+    "title": "Silo",
+    "rating": 7.2,
+    "year": 2023,
+    "tmdb_id": 0,
+    "kinopoisk_id": 4541515,
+    "imdb_id": ""
+  },
+  {
+    "title": "The Queen's Gambit",
+    "rating": 7.1,
+    "year": 2020,
+    "tmdb_id": 87739,
+    "kinopoisk_id": 1253633,
+    "imdb_id": "tt10048342"
+  },
+  {
+    "title": "FlashForward",
+    "rating": 7.1,
+    "year": 2009,
+    "tmdb_id": 19092,
+    "kinopoisk_id": 466504,
+    "imdb_id": "tt1441135"
+  },
+  {
+    "title": "The 4400",
+    "rating": 7.1,
+    "year": 2004,
+    "tmdb_id": 0,
+    "kinopoisk_id": 77135,
+    "imdb_id": ""
+  },
+  {
+    "title": "Trust",
+    "rating": 7.1,
+    "year": 2018,
+    "tmdb_id": 76177,
+    "kinopoisk_id": 1044759,
+    "imdb_id": "tt5664952"
+  },
+  {
+    "title": "The Office",
+    "rating": 7,
+    "year": 2005,
+    "tmdb_id": 2316,
+    "kinopoisk_id": 253245,
+    "imdb_id": "tt0386676"
+  },
+  {
+    "title": "The Event",
+    "rating": 7,
+    "year": 2010,
+    "tmdb_id": 32730,
+    "kinopoisk_id": 521592,
+    "imdb_id": "tt1582459"
+  },
+  {
+    "title": "Modern Family",
+    "rating": 7,
+    "year": 2009,
+    "tmdb_id": 1421,
+    "kinopoisk_id": 472329,
+    "imdb_id": "tt1442437"
+  },
+  {
+    "title": "The Walking Dead",
+    "rating": 6.9,
+    "year": 2010,
+    "tmdb_id": 1402,
+    "kinopoisk_id": 508161,
+    "imdb_id": "tt1520211"
+  },
+  {
+    "title": "Bates Motel",
+    "rating": 6.9,
+    "year": 2013,
+    "tmdb_id": 0,
+    "kinopoisk_id": 672861,
+    "imdb_id": "tt2188671"
+  },
+  {
+    "title": "Persons Unknown",
+    "rating": 6.9,
+    "year": 2010,
+    "tmdb_id": 32817,
+    "kinopoisk_id": 471775,
+    "imdb_id": "tt1333050"
+  },
+  {
+    "title": "Shogun",
+    "rating": 6.9,
+    "year": 2024,
+    "tmdb_id": 126308,
+    "kinopoisk_id": 749562,
+    "imdb_id": "tt2788316"
+  },
+  {
+    "title": "Outer Banks",
+    "rating": 6.8,
+    "year": 2020,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1264562,
+    "imdb_id": "tt10293938"
+  },
+  {
+    "title": "Leverage",
+    "rating": 6.7,
+    "year": 2008,
+    "tmdb_id": 7482,
+    "kinopoisk_id": 397585,
+    "imdb_id": "tt1103987"
+  },
+  {
+    "title": "Colony",
+    "rating": 6.7,
+    "year": 2016,
+    "tmdb_id": 0,
+    "kinopoisk_id": 885731,
+    "imdb_id": ""
+  },
+  {
+    "title": "The Last Man on Earth",
+    "rating": 6.7,
+    "year": 2015,
+    "tmdb_id": 61888,
+    "kinopoisk_id": 804728,
+    "imdb_id": "tt3230454"
+  },
+  {
+    "title": "Supernatural",
+    "rating": 6.6,
+    "year": 2005,
+    "tmdb_id": 1622,
+    "kinopoisk_id": 178707,
+    "imdb_id": "tt0460681"
+  },
+  {
+    "title": "Agents of S.H.I.E.L.D.",
+    "rating": 6.5,
+    "year": 2013,
+    "tmdb_id": 1403,
+    "kinopoisk_id": 701756,
+    "imdb_id": "tt2364582"
+  },
+  {
+    "title": "The 100",
+    "rating": 6.4,
+    "year": 2014,
+    "tmdb_id": 48866,
+    "kinopoisk_id": 733493,
+    "imdb_id": "tt2661044"
+  },
+  {
+    "title": "Houdini",
+    "rating": 6.3,
+    "year": 2014,
+    "tmdb_id": 0,
+    "kinopoisk_id": 818775,
+    "imdb_id": ""
+  },
+  {
+    "title": "Marco Polo",
+    "rating": 6.3,
+    "year": 2014,
+    "tmdb_id": 60699,
+    "kinopoisk_id": 820513,
+    "imdb_id": "tt2189461"
+  },
+  {
+    "title": "Friends",
+    "rating": 6.2,
+    "year": 1994,
+    "tmdb_id": 1668,
+    "kinopoisk_id": 77044,
+    "imdb_id": "tt0108778"
+  },
+  {
+    "title": "The Witcher",
+    "rating": 6.2,
+    "year": 2019,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1044004,
+    "imdb_id": ""
+  },
+  {
+    "title": "Westworld",
+    "rating": 6.2,
+    "year": 2016,
+    "tmdb_id": 63247,
+    "kinopoisk_id": 195523,
+    "imdb_id": "tt0475784"
+  },
+  {
+    "title": "Fringe",
+    "rating": 6.2,
+    "year": 2008,
+    "tmdb_id": 1705,
+    "kinopoisk_id": 412342,
+    "imdb_id": "tt1119644"
+  },
+  {
+    "title": "Elementary",
+    "rating": 6.1,
+    "year": 2012,
+    "tmdb_id": 1415,
+    "kinopoisk_id": 661210,
+    "imdb_id": "tt2191671"
+  },
+  {
+    "title": "Black Sails",
+    "rating": 6.1,
+    "year": 2014,
+    "tmdb_id": 47665,
+    "kinopoisk_id": 714095,
+    "imdb_id": "tt2375692"
+  },
+  {
+    "title": "The Big Bang Theory",
+    "rating": 6,
+    "year": 2007,
+    "tmdb_id": 1418,
+    "kinopoisk_id": 306084,
+    "imdb_id": "tt0898266"
+  },
+  {
+    "title": "The Forgotten",
+    "rating": 6,
+    "year": 2009,
+    "tmdb_id": 30704,
+    "kinopoisk_id": 466988,
+    "imdb_id": "tt1420425"
+  },
+  {
+    "title": "Extant",
+    "rating": 5.9,
+    "year": 2014,
+    "tmdb_id": 0,
+    "kinopoisk_id": 799433,
+    "imdb_id": ""
+  },
+  {
+    "title": "Unbelievable",
+    "rating": "...",
+    "year": 2019,
+    "tmdb_id": 91275,
+    "kinopoisk_id": 1169469,
+    "imdb_id": "tt7909970"
+  },
+  {
+    "title": "The Expanse",
+    "rating": "...",
+    "year": 2015,
+    "tmdb_id": 63639,
+    "kinopoisk_id": 805092,
+    "imdb_id": "tt3230854"
+  },
+  {
+    "title": "The Young Pope",
+    "rating": "...",
+    "year": 2016,
+    "tmdb_id": 62699,
+    "kinopoisk_id": 893361,
+    "imdb_id": "tt3655448"
+  },
+  {
+    "title": "The Wire",
+    "rating": "...",
+    "year": 2002,
+    "tmdb_id": 1438,
+    "kinopoisk_id": 402955,
+    "imdb_id": "tt0306414"
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "rating": "...",
+    "year": 2017,
+    "tmdb_id": 69478,
+    "kinopoisk_id": 1007426,
+    "imdb_id": "tt5834204"
+  },
+  {
+    "title": "The Idol",
+    "rating": "...",
+    "year": 2023,
+    "tmdb_id": 135251,
+    "kinopoisk_id": 4746003,
+    "imdb_id": "tt14954666"
+  },
+  {
+    "title": "Dark matter",
+    "rating": "...",
+    "year": 2024,
+    "tmdb_id": 196322,
+    "kinopoisk_id": 5024113,
+    "imdb_id": "tt19231492"
+  },
+  {
+    "title": "Silo",
+    "rating": "...",
+    "year": 2023,
+    "tmdb_id": 0,
+    "kinopoisk_id": 4541515,
+    "imdb_id": ""
+  },
+  {
+    "title": "When They See Us",
+    "rating": "...",
+    "year": 2019,
+    "tmdb_id": 0,
+    "kinopoisk_id": 1174230,
+    "imdb_id": ""
+  },
+  {
+    "title": "A Knight of the Seven Kingdoms",
+    "rating": "...",
+    "year": 2026,
+    "tmdb_id": 0,
+    "kinopoisk_id": 5281617,
+    "imdb_id": ""
+  },
+  {
+    "title": "Fallout",
+    "rating": "...",
+    "year": 2024,
+    "tmdb_id": 106379,
+    "kinopoisk_id": 1394131,
+    "imdb_id": "tt12637874"
+  }
 ]
