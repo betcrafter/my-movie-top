@@ -90,10 +90,10 @@
   {
     "title": "House",
     "rating": 8.8,
-    "year": 2022,
-    "tmdb_id": 0,
-    "kinopoisk_id": 1316601,
-    "imdb_id": ""
+    "year": 2004,
+    "tmdb_id": 1408,
+    "kinopoisk_id": 178710,
+    "imdb_id": "tt0412142"
   },
   {
     "title": "How to Get Away with Murder",
@@ -635,7 +635,7 @@
     "title": "Extant",
     "rating": 5.9,
     "year": 2014,
-    "tmdb_id": 0,
+    "tmdb_id": 58111,
     "kinopoisk_id": 799433,
     "imdb_id": ""
   },
@@ -699,7 +699,7 @@
     "title": "Silo",
     "rating": "...",
     "year": 2023,
-    "tmdb_id": 0,
+    "tmdb_id": 125988,
     "kinopoisk_id": 4541515,
     "imdb_id": ""
   },
@@ -707,7 +707,7 @@
     "title": "When They See Us",
     "rating": "...",
     "year": 2019,
-    "tmdb_id": 0,
+    "tmdb_id": 81355,
     "kinopoisk_id": 1174230,
     "imdb_id": ""
   },
@@ -715,7 +715,7 @@
     "title": "A Knight of the Seven Kingdoms",
     "rating": "...",
     "year": 2026,
-    "tmdb_id": 0,
+    "tmdb_id": 224372,
     "kinopoisk_id": 5281617,
     "imdb_id": ""
   },
