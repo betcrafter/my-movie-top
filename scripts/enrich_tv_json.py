@@ -11,6 +11,7 @@ Reads a file under the project root (--input, default tv.json); the source file 
 By default writes {stem}_YYYYMMDD_HHMMSS.json (e.g. movies_20260403_120000.json).
 
 Requires API token in env (POISK_KINO_API_KEY) or in project-root .env — see --help.
+Use -n N to cap how many search API calls are made per run (daily quota).
 """
 
 from __future__ import annotations
@@ -340,7 +341,19 @@ def main() -> int:
         action="store_true",
         help="Log each search query and hit count to stderr",
     )
+    parser.add_argument(
+        "-n",
+        "--max-requests",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Perform at most N search API requests this run (omit for no limit). "
+        "Further rows keep existing fields (normalized), no new lookups.",
+    )
     args = parser.parse_args()
+
+    if args.max_requests is not None and args.max_requests < 0:
+        parser.error("-n/--max-requests must be >= 0")
 
     root = repo_root()
     load_env_file(root)
@@ -392,6 +405,8 @@ def main() -> int:
         )
 
     out: list[dict] = []
+    api_calls = 0
+    quota_skipped = 0
     for i, entry in enumerate(data):
         if not isinstance(entry, dict):
             out.append(entry)
@@ -412,7 +427,18 @@ def main() -> int:
             out.append(passthrough_row(entry))
             continue
 
+        if args.max_requests is not None and api_calls >= args.max_requests:
+            quota_skipped += 1
+            if args.verbose:
+                print(
+                    f"Row {i}: skip API (request limit -n {args.max_requests} reached)",
+                    file=sys.stderr,
+                )
+            out.append(passthrough_row(entry))
+            continue
+
         docs, http_err = search(api_key, q)
+        api_calls += 1
         if http_err == 401:
             print(
                 "Aborting: API returned 401 (invalid token). Fix the key and run again.",
@@ -429,6 +455,17 @@ def main() -> int:
 
         if i < len(data) - 1:
             time.sleep(REQUEST_DELAY_SEC)
+
+    if args.max_requests is not None:
+        print(
+            f"API search requests this run: {api_calls} (limit {args.max_requests}).",
+            file=sys.stderr,
+        )
+        if quota_skipped:
+            print(
+                f"Rows left without lookup due to limit: {quota_skipped}.",
+                file=sys.stderr,
+            )
 
     text = json.dumps(out, ensure_ascii=False, indent=2) + "\n"
 
